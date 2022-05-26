@@ -1,0 +1,27 @@
+{% macro displayNewsList(news_list) %}
+
+    {% for source in news_list %}
+       <a href="{{source.url}}" style="color:black"> 
+        <h4>{{ source.name }}</h4>
+    </a>
+    
+    {% endfor %}
+
+{% endmacro %}
+{% macro displayArticlesList(articles_list) %}
+   
+    {% for article in articles_list %}
+    <div>
+        <a href="{{article.link_to_article}}">
+    <div style="margin-bottom:12px;">
+       <img src="{{article.image}}" class="img-responsive" style="border-radius: 5%;">
+    </div>
+    <div style="margin-top: 7px;">
+      <p>{{article.description}}</p>
+      <p>{{article.date_created}}</p>
+    </div>
+       </a>  
+    </div>
+    {% endfor %}
+
+{% endmacro %}
